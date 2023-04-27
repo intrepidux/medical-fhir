@@ -21,34 +21,15 @@ odoo.define("owl_tutorial_views.OWLTreeRenderer", function (require) {
                     countField: this.props.arch.attrs.count_field,
                 });
             }
+            console.log(this);
         }
     }
 
     const components = {
-        TreeItem: require("owl_tutorial_views/static/src/components/tree_item/TreeItem.js"),
+        ImpressionComponent: require("owl_tutorial_views/static/src/components/impression_component.js"),
     };
     Object.assign(OWLTreeRenderer, {
         components,
-        defaultProps: {
-            items: [],
-        },
-        props: {
-            arch: {
-                type: Object,
-                optional: true,
-            },
-            items: {
-                type: Array,
-            },
-            isEmbedded: {
-                type: Boolean,
-                optional: true,
-            },
-            noContentHelp: {
-                type: String,
-                optional: true,
-            },
-        },
         template: "owl_tutorial_views.OWLTreeRenderer",
     });
 
